@@ -1,8 +1,7 @@
+$(document).ready(function() {
 //jquery wrapper -- not necessary due to script tag at bottom of html for jquery
-$(document).ready(function () {
-
     //target button, create event listner - create anomynous function
-    $('.saveBtn').on('click', function () {
+    $('.saveBtn').on('click', function() {
         //inside function -- identify the parent line "this" of each hour, and grabe the input value description
         var value = $(this).siblings('.description').val();
         var time = $(this).parent().attr('id');
