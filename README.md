@@ -14,11 +14,11 @@
 
 ## Deployment Link
 
-[Daily-Schedule]("https://slsmi894.github.io/Daily-Schedule/")
+[Daily-Schedule](https://slsmi894.github.io/Daily-Schedule/)
 
 ## Screenshot Image of this App
 
-![Image of App in Use]("https://github.com/slsmi894/Daily-Schedule/blob/main/images/daily.png")
+![Image of App in Use](https://github.com/slsmi894/Daily-Schedule/blob/main/images/daily.png)
 
 ### Questions
 
