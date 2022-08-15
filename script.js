@@ -55,5 +55,14 @@ $(document).ready(function() {
     //display the current date
     $('#currentDay').text(moment().format('dddd, MMMM Do'));
 
+    //this will clear the page and local storage
+        $('.clearBtn').on("click", function(){
+           localStorage.clear();
+        blockHr = 0; 
+        window.location.reload();
+        });
+        
+
+
 
 });
