@@ -1,43 +1,44 @@
 //jquery wrapper -- not necessary due to script tag at bottom of html for jquery
-$(document).ready(function(){
+$(document).ready(function () {
 
-//target button, create event listner - create anomynous function
-$('.saveBtn').on('click', function() {
-    //inside function -- identify the parent line "this" of each hour, and grabe the input value description
-    var value  = $(this).siblings('.description').val();
-    var time = $(this).parent().attr('id');
+    //target button, create event listner - create anomynous function
+    $('.saveBtn').on('click', function () {
+        //inside function -- identify the parent line "this" of each hour, and grabe the input value description
+        var value = $(this).siblings('.description').val();
+        var time = $(this).parent().attr('id');
 
-    //take the value and send it LS, use time and use as key -- each hour will be grabbed and stored
-    localStorage.setItem(time, value);
+        //take the value and send it LS, use time and use as key -- each hour will be grabbed and stored
+        localStorage.setItem(time, value);
 
-    //could create a notification to show that LS was done -- skipping this w/a setTimeout method
-});
-
-function UpdateHour() {
-    //create a variable to identify real time using moment js - identifying only the hour
-    var currentHr = moment().hours();
-//iterate over the timeblocks using moment js and conditional
-    $('.time-block').each(function () {
-        var blockHr = parseInt($(this).attr('id').split('-')[1]);
-
-        //creast the conditional for time status
-        //start with past? present? future?
-        if (blockHr < currentHr) {
-            $(this).addClass('past');
-            
-        } else if (blockHr === currentHr) {
-            $(this).removeClass('past');
-            $(this).addClass('present');
-        } else {
-            $(this).removeClass('past');
-            $(this).removeClass('present');
-            $(this).addClass('future');
-        }
+        //could create a notification to show that LS was done -- skipping this w/a setTimeout method
     });
-//call the function
+
+    function UpdateHour() {
+        //create a variable to identify real time using moment js - identifying only the hour
+        var currentHr = moment().hours();
+        //iterate over the timeblocks using moment js and conditional
+        $('.time-block').each(function () {
+            var blockHr = parseInt($(this).attr('id').split('-')[1]);
+
+            //creast the conditional for time status
+            //start with past? present? future?
+            if (blockHr < currentHr) {
+                $(this).addClass('past');
+
+            } else if (blockHr === currentHr) {
+                $(this).removeClass('past');
+                $(this).addClass('present');
+            } else {
+                $(this).removeClass('past');
+                $(this).removeClass('present');
+                $(this).addClass('future');
+            }
+        });
+    }
+    //call the function
     UpdateHour();
 
-//apply a timer to it -- so that the function to compare time runs every 15 seconds
+    //apply a timer to it -- so that the function to compare time runs every 15 seconds
     var interval = setInterval(UpdateHour, 15000);
 
 
@@ -51,9 +52,9 @@ function UpdateHour() {
     $('#hour-15 .description').val(localStorage.getItem('hour-15'));
     $('#hour-16 .description').val(localStorage.getItem('hour-16'));
     $('#hour-17 .description').val(localStorage.getItem('hour-17'));
-}
-//display the current date
+
+    //display the current date
+    $('#currentDay').text(moment().format('dddd, MMMM Do'));
 
 
-    
-})
+});
