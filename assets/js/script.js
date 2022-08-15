@@ -17,7 +17,7 @@ function UpdateHour() {
     //create a variable to identify real time using moment js - identifying only the hour
     var currentHr = moment().hours();
 //iterate over the timeblocks using moment js and conditional
-    v$('.time-block').each(function () {
+    $('.time-block').each(function () {
         var blockHr = parseInt($(this).attr('id').split('-')[1]);
 
         //creast the conditional for time status
@@ -52,16 +52,7 @@ function UpdateHour() {
     $('#hour-16 .description').val(localStorage.getItem('hour-16'));
     $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 }
-
-
-
-
-
-
-
-
-
-
+//display the current date
 
 
     
