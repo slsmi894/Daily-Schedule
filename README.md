@@ -18,7 +18,7 @@
 
 ## Screenshot Image of this App
 
-![Image of App in Use]("./images/daily.png")
+![Image of App in Use]("https://github.com/slsmi894/Daily-Schedule/blob/main/images/daily.png")
 
 ### Questions
 
